@@ -1,0 +1,22 @@
+﻿name: Travel_Handlebars_Prompt
+template: |
+    <message role="system">Instructions = Identify the from and to destinations 
+    and dates from the user's request. Be brief and don't guess.</message>
+
+    <message role="user">Can you give me a list of flights from Seattle to Tokyo? 
+    I want to travel from March 11 to March 18.</message>
+
+    <message role="assistant">
+    Origin = Seattle
+    Destination = Tokyo
+    Depart = 03/11/2025 
+    Return = 03/18/2025
+    </message>
+
+    <message role="user">{{input}}</message>
+template_format: handlebars
+description: Travel handlebars prompt template with few-shot learning.
+input_variables:
+  - name: input
+    description: Input details.
+    is_required: true
